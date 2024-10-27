@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <link rel="icon" href="./imgs/logo.png" />
+    <!-- ^ File All.Main -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- ^ File Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- ^ File Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- & Section Loading -->
+    <div
+      class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center"
+    >
+      <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+
+    <!-- & Section Side Nav -->
+    <div class="side-nav-menu min-vh-100 position-fixed d-flex top-0">
+      <div
+        class="nav-tab d-flex flex-column justify-content-between min-vh-100 p-4"
+      >
+        <div class="links">
+          <ul class="list-unstyled overflow-hidden">
+            <li
+              onclick="showSearchInputs(); closeSideNav()"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Search
+            </li>
+            <li
+              onclick="getCategories(); closeSideNav()"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Categories
+            </li>
+            <li
+              onclick="getArea(); closeSideNav()"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Area
+            </li>
+            <li
+              onclick="getIngredients(); closeSideNav()"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Ingredients
+            </li>
+            <li
+              onclick="showContacts(); closeSideNav()"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Contact Us
+            </li>
+          </ul>
+        </div>
+        <div class="nav-footer">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="footer">
+            <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black"
+      >
+        <img class="logo" src="imgs/logo.png" alt="" srcset="" />
+        <i
+          class="fa-solid open-close-icon fa-align-justify fa-2x text-dark"
+        ></i>
+        <div>
+          <i class="fa-solid fa-globe d-block text-dark"></i>
+          <i class="fa-solid fa-share-nodes text-dark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- & Section Search -->
+    <div class="container w-75" id="searchContainer"></div>
+    <!-- & Section Home -->
+    <div class="min-vh-100 position-relative">
+      <div
+        class="inner-loading-screen top-0 start-0 end-0 bottom-0 justify-content-center align-items-center"
+      >
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+      </div>
+
+      <div class="container">
+        <div class="row py-5 g-4" id="rowData"></div>
+      </div>
+    </div>
+    <!-- ^ File jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- ^ File Bootstrap Js  -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- ^ File Js -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
+<!-- <div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/g046bb1663960946.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Sushi</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/tkxquw1628771028.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Burek</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/58oia61564916529.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Corba</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/mlchx21564916997.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Kumpir</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/n3xxd91598732796.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Tamiya</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/4pqimk1683207418.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Bistek</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/1525876468.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Wontons</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/1bsv1q1560459826.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Kafteji</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/urzj1d1587670726.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Big Mac</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/wtsvxx1511296896.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Lasagne</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/txsupu1511815755.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Timbits</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/wuxrtu1483564410.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Dal fry</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/4er7mj1598733193.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Koshari</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/uuyrrx1487327597.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Poutine</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/rwuyqx1511383174.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Pancakes</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/sxysrt1468240488.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Kapsalon</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/ctg8jd1585563097.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Moussaka</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/kcv6hj1598733479.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Shawarma</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/ysxwuq1487323065.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Fish pie</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/hyarod1565090529.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Stamppot</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/wssvvs1511785879.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Flamiche</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/utxqpt1511639216.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Kedgeree</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/xrrwpx1487347049.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Ribollita</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/hx335q1619789561.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Roti john</h3>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="meal position-relative overflow-hidden rounded-3">
+    <img src="./imgs/uuxwvq1483907861.jpg" alt="" class="w-100" />
+    <div class="meal-layer position-absolute d-flex align-items-center">
+      <h3 class="px-2">Eton Mess</h3>
+    </div>
+  </div>
+</div> -->
